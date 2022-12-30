@@ -1,0 +1,247 @@
+show databases;
+
+show tables;
+
+create table users
+(
+    id bigint PRIMARY KEY NOT NULL,
+    nick text NOT NULL,
+    login text NOT NULL,
+    pass text NOT NULL,
+    insert_time timestamp NOT NULL DEFAULT now()
+);
+
+
+
+create table vehicles
+(
+    id bigint PRIMARY KEY NOT NULL,
+    user_id bigint NOT NULL,
+    login text NOT NULL,
+    brand text NOT NULL,
+    model text NOT NULL,
+    insert_time timestamp NOT NULL DEFAULT now(),
+    FOREIGN KEY (user_id) REFERENCES users(id)
+);
+
+
+
+create table insurance_offers
+(
+    id bigint PRIMARY KEY NOT NULL,
+    vehicle_id bigint NOT NULL,
+    insurer text NOT NULL,
+    price text NOT NULL,
+    insert_time timestamp NOT NULL DEFAULT now(),
+    FOREIGN KEY (vehicle_id) REFERENCES VEHICLES(ID)
+);
+
+INSERT INTO USERS (ID, nick, login, pass)
+VALUES (1, 'Lee','lhiam','123zxc123zxc');
+
+INSERT INTO USERS (ID, nick, login, pass)
+VALUES (2, 'Kotek_12','koteczek','pasword1');
+
+INSERT INTO USERS (ID, nick, login, pass)
+VALUES (3, 'Wiking1988','wiku123','hehehehe');
+
+INSERT INTO USERS (ID, nick, login, pass)
+VALUES (4, 'kuba1306','kuba1988','nieWiemCo');
+
+INSERT INTO USERS (ID, nick, login, pass)
+VALUES (5, 'Agata89','agapan27','agaPan1989');
+
+
+
+INSERT INTO VEHICLES (ID, user_id, login, brand, model)
+VALUES (1, 1, 'lhiam','Audi','A3');
+
+INSERT INTO VEHICLES (ID, user_id, login, brand, model)
+VALUES (2, 2, 'koteczek','BMW','X6');
+
+INSERT INTO VEHICLES (ID, user_id, login, brand, model)
+VALUES (3, 3, 'wiku123','Ford','Focus');
+
+INSERT INTO VEHICLES (ID, user_id, login, brand, model)
+VALUES (4, 4, 'kuba1998','Mazda','6');
+
+INSERT INTO VEHICLES (ID, user_id, login, brand, model)
+VALUES (5, 5, 'Agata27','Citroen','C3');
+
+INSERT INTO VEHICLES (ID, user_id, login, brand, model)
+VALUES (6, 1, 'lhiam','Nissan','Navarra');
+
+INSERT INTO VEHICLES (ID, user_id, login, brand, model)
+VALUES (7, 2, 'koteczek','Skoda','Octavia');
+
+INSERT INTO VEHICLES (ID, user_id, login, brand, model)
+VALUES (8, 3, 'wiku123','Opel','Vectra');
+
+INSERT INTO VEHICLES (ID, user_id, login, brand, model)
+VALUES (9, 4, 'kuba1998','Opel','Astra');
+
+INSERT INTO VEHICLES (ID, user_id, login, brand, model)
+VALUES (10, 5, 'Agata27','Toyota','Corolla');
+
+INSERT INTO VEHICLES (ID, user_id, login, brand, model)
+VALUES (11, 1, 'lhiam','Renault','Megane');
+
+INSERT INTO VEHICLES (ID, user_id, login, brand, model)
+VALUES (12, 2, 'koteczek','Toyota','Corolla');
+
+INSERT INTO VEHICLES (ID, user_id, login, brand, model)
+VALUES (13, 3, 'wiku123','Kia','Sportage');
+
+INSERT INTO VEHICLES (ID, user_id, login, brand, model)
+VALUES (14, 4, 'kuba1998','VW','Golf');
+
+INSERT INTO VEHICLES (ID, user_id, login, brand, model)
+VALUES (15, 5, 'Agata27','VW','Passat');
+
+
+
+INSERT INTO insurance_offers (ID, vehicle_id, insurer, price)
+VALUES (1, 1,'Warta', 2100);
+
+INSERT INTO insurance_offers (ID, vehicle_id, insurer, price)
+VALUES (2, 1,'ErgoHestia', 1998);
+
+INSERT INTO insurance_offers (ID, vehicle_id, insurer, price)
+VALUES (3, 1,'Generali', 2367);
+
+INSERT INTO insurance_offers (ID, vehicle_id, insurer, price)
+VALUES (4, 2, 'Axa', 1106);
+
+INSERT INTO insurance_offers (ID, vehicle_id, insurer, price)
+VALUES (5, 2, 'Link4', 992);
+
+INSERT INTO insurance_offers (ID, vehicle_id, insurer, price)
+VALUES (6, 3,'Uniqua', 1234);
+
+INSERT INTO insurance_offers (ID, vehicle_id, insurer, price)
+VALUES (7, 4,'AxaDirect', 3389);
+
+INSERT INTO insurance_offers (ID, vehicle_id, insurer, price)
+VALUES (8, 5,'Link4', 2246);
+
+INSERT INTO insurance_offers (ID, vehicle_id, insurer, price)
+VALUES (9, 6, 'PZU', 2276);
+
+INSERT INTO insurance_offers (ID, vehicle_id, insurer, price)
+VALUES (10, 7, 'Generali', 3389);
+
+INSERT INTO insurance_offers (ID, vehicle_id, insurer, price)
+VALUES (11, 8,'Axa Axa', 189);
+
+INSERT INTO insurance_offers (ID, vehicle_id, insurer, price)
+VALUES (12, 8,'Ing', 5389);
+
+INSERT INTO insurance_offers (ID, vehicle_id, insurer, price)
+VALUES (13, 7,'ViennaInsurance', 2765);
+
+INSERT INTO insurance_offers (ID, vehicle_id, insurer, price)
+VALUES (14, 6, 'Uniqua', 7789);
+
+INSERT INTO insurance_offers (ID, vehicle_id, insurer, price)
+VALUES (15, 5, 'pzu', 2214);
+
+
+INSERT INTO VEHICLES (ID, user_id, login, brand, model)
+VALUES (1, 1, 'lhiam','Audi','A3');
+
+INSERT INTO VEHICLES (ID, user_id, login, brand, model)
+VALUES (2, 2, 'koteczek','BMW','X6');
+
+INSERT INTO VEHICLES (ID, user_id, login, brand, model)
+VALUES (3, 3, 'wiku123','Ford','Focus');
+
+INSERT INTO VEHICLES (ID, user_id, login, brand, model)
+VALUES (4, 4, 'kuba1998','Mazda','6');
+
+INSERT INTO VEHICLES (ID, user_id, login, brand, model)
+VALUES (5, 5, 'Agata27','Citroen','C3');
+
+INSERT INTO VEHICLES (ID, user_id, login, brand, model)
+VALUES (6, 1, 'lhiam','Nissan','Navarra');
+
+INSERT INTO VEHICLES (ID, user_id, login, brand, model)
+VALUES (7, 2, 'koteczek','Skoda','Octavia');
+
+INSERT INTO VEHICLES (ID, user_id, login, brand, model)
+VALUES (8, 3, 'wiku123','Opel','Vectra');
+
+INSERT INTO VEHICLES (ID, user_id, login, brand, model)
+VALUES (9, 4, 'kuba1998','Opel','Astra');
+
+INSERT INTO VEHICLES (ID, user_id, login, brand, model)
+VALUES (10, 5, 'Agata27','Toyota','Corolla');
+
+INSERT INTO VEHICLES (ID, user_id, login, brand, model)
+VALUES (11, 1, 'lhiam','Renault','Megane');
+
+INSERT INTO VEHICLES (ID, user_id, login, brand, model)
+VALUES (12, 2, 'koteczek','Toyota','Corolla');
+
+INSERT INTO VEHICLES (ID, user_id, login, brand, model)
+VALUES (13, 3, 'wiku123','Kia','Sportage');
+
+INSERT INTO VEHICLES (ID, user_id, login, brand, model)
+VALUES (14, 4, 'kuba1998','VW','Golf');
+
+INSERT INTO VEHICLES (ID, user_id, login, brand, model)
+VALUES (15, 5, 'Agata27','VW','Passat');
+
+INSERT INTO insurance_offers (ID, vehicle_id, insurer, price)
+VALUES (16, 3,'MTU', 2914);
+
+INSERT INTO insurance_offers (ID, vehicle_id, insurer, price)
+VALUES (17, 2,'Proama', 3195);
+
+INSERT INTO insurance_offers (ID, vehicle_id, insurer, price)
+VALUES (18, 5,'Benefia', 2367);
+
+INSERT INTO insurance_offers (ID, vehicle_id, insurer, price)
+VALUES (19, 4, 'Proama', 2284);
+
+INSERT INTO insurance_offers (ID, vehicle_id, insurer, price)
+VALUES (20, 6, 'PZU', 2952);
+
+INSERT INTO insurance_offers (ID, vehicle_id, insurer, price)
+VALUES (21, 4,'Vectra', 1798);
+
+INSERT INTO insurance_offers (ID, vehicle_id, insurer, price)
+VALUES (22, 1,'PZU', 2265);
+
+INSERT INTO insurance_offers (ID, vehicle_id, insurer, price)
+VALUES (23, 5,'ViennInsuaranceGroup', 1235);
+
+INSERT INTO insurance_offers (ID, vehicle_id, insurer, price)
+VALUES (24, 9, 'PZU', 2276);
+
+INSERT INTO insurance_offers (ID, vehicle_id, insurer, price)
+VALUES (25, 7, 'Axa', 5321);
+
+INSERT INTO insurance_offers (ID, vehicle_id, insurer, price)
+VALUES (26, 4,'Benefia', 2523);
+
+INSERT INTO insurance_offers (ID, vehicle_id, insurer, price)
+VALUES (27, 10 ,'Generali', 1389);
+
+INSERT INTO insurance_offers (ID, vehicle_id, insurer, price)
+VALUES (28, 7,'MTU', 1756);
+
+INSERT INTO insurance_offers (ID, vehicle_id, insurer, price)
+VALUES (29, 11, 'PZU', 6712);
+
+INSERT INTO insurance_offers (ID, vehicle_id, insurer, price)
+VALUES (30, 2, 'Proama', 1592);
+
+show tables;
+select * from insurance_offers where vehicle_id = 2;
+
+SELECT users.login, vehicles.brand, vehicles.model, insurance_offers.insurer, insurance_offers.price
+FROM users JOIN VEHICLES ON USERS.LOGIN = VEHICLES.LOGIN join
+     insurance_offers on vehicles.id = insurance_offers.vehicle_id
+where users.id = 1;
+where users.i
+
